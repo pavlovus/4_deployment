@@ -1,0 +1,7 @@
+{
+  "name": "bike-demand-predictor",
+  "implementation": "mlserver_mlflow.MLflowRuntime",
+  "parameters": {
+    "uri": "s3://mlflow/6/853718a5961e4a3aa4ebece8a5c04924/artifacts/lgbm-bike"
+  }
+}

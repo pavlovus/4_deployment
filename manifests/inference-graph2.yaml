@@ -6,4 +6,27 @@ metadata:
 spec: 
   nodes: 
     ### START CONF HERE
+    root:
+      routerType: Switch
+      steps:
+      - nodeName: lgbmEnsemble
+        condition: "[@this].#(modelType==\"lgbm\")"
+      - nodeName: xgbEnsemble
+        condition: "[@this].#(modelType==\"xgb\")"
+
+    lgbmEnsemble:
+      routerType: Ensemble
+      steps:
+      - serviceName: bike-lgbm-1
+        name: bike-lgbm-v1
+      - serviceName: bike-lgbm-2
+        name: bike-lgbm-v2
+
+    xgbEnsemble:
+      routerType: Ensemble
+      steps:
+      - serviceName: bike-xgb-1
+        name: bike-xgb-v1
+      - serviceName: bike-xgb-2
+        name: bike-xgb-v2
     ### END CONF HERE

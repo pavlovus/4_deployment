@@ -7,4 +7,9 @@ spec:
   predictor:
     serviceAccountName: kserve-sa
     ### START CONF HERE
+    model:
+      modelFormat:
+        name: mlflow
+      protocolVersion: v2
+      storageUri: s3://mlflow/6/853718a5961e4a3aa4ebece8a5c04924/artifacts/lgbm-bike
     ### END CONF HERE
